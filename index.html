@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>李彥勳 ∙ 悅懌生技顧問</title>
+<meta name="description" content="創新配方設計 ∙ 市場需求規劃 ∙ 品牌孵化陪跑">
+<meta property="og:title" content="李彥勳 ∙ 總經理 ∙ 悅懌生技顧問">
+<meta property="og:description" content="創新配方設計 ∙ 市場需求規劃 ∙ 品牌孵化陪跑">
+<meta property="og:image" content="card-flex.jpg">
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<style>
+  :root{
+    --brand:      #ffad01;
+    --brand-deep: #d98f00;
+    --brand-soft: #fff6e2;
+    --ink:        #1b1a18;
+    --ink-2:      #4b4945;
+    --ink-3:      #8d8a84;
+    --paper:      #ffffff;
+    --paper-2:    #faf8f4;
+    --rule:       #e9e4da;
+    --font:"Noto Sans TC","PingFang TC","Microsoft JhengHei",-apple-system,system-ui,sans-serif;
+    --mono: ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:#e6e2da; color:var(--ink);
+    font-family:var(--font); line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  .shell{
+    position:relative; max-width:520px; margin:0 auto; min-height:100vh;
+    background:var(--paper); padding-bottom:88px;
+    box-shadow:0 0 70px -24px rgba(40,34,24,.4); overflow:hidden;
+  }
+  .progress{
+    position:fixed; top:0; left:50%; transform:translateX(-50%);
+    width:100%; max-width:520px; height:3px; z-index:40; pointer-events:none;
+  }
+  .progress i{ display:block; height:100%; width:0; background:var(--brand); transition:width .1s linear; }
+
+  /* ═════ 首屏 ═════ */
+  .hero{ position:relative; height:min(70vh,580px); overflow:hidden; background:#4a4e55; }
+  .hero img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:50% 12%; display:block;
+  }
+  .hero .veil{
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom,
+      rgba(14,15,17,0) 32%, rgba(14,15,17,.22) 54%,
+      rgba(14,15,17,.76) 84%, rgba(14,15,17,.94) 100%);
+  }
+  .hero .bar{
+    position:absolute; left:24px; bottom:0; width:3px; height:42%;
+    background:linear-gradient(to bottom, rgba(255,173,1,0), var(--brand));
+  }
+  .hero .meta{ position:absolute; left:0; right:0; bottom:0; padding:0 24px 30px 40px; }
+  .hero .title{
+    display:inline-block; margin:0 0 12px; padding:4px 12px;
+    font-size:11.5px; letter-spacing:.2em; color:#1b1a18; font-weight:700;
+    background:var(--brand); border-radius:2px;
+  }
+  .hero h1{
+    margin:0; font-size:40px; font-weight:700; letter-spacing:.14em; line-height:1.15;
+    color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.5);
+  }
+  .hero .en{
+    margin:9px 0 0; font-family:var(--mono); font-size:10.5px;
+    letter-spacing:.32em; text-transform:uppercase; color:rgba(255,255,255,.66);
+  }
+  .hero .corp{
+    margin:16px 0 0; font-size:13px; letter-spacing:.05em; color:rgba(255,255,255,.9);
+  }
+  .hero .corp span{ display:block; font-size:12px; color:rgba(255,255,255,.62); margin-top:2px; }
+
+  /* ═════ 品牌帶 ═════ */
+  .brandband{ background:var(--brand); padding:26px 24px 24px; text-align:center; }
+  .brandband img{ width:min(260px,72%); height:auto; display:block; margin:0 auto; mix-blend-mode:normal; }
+  .brandband ul{
+    list-style:none; margin:20px 0 0; padding:0;
+    display:flex; justify-content:center; flex-wrap:wrap; gap:8px 0;
+  }
+  .brandband li{
+    font-size:12.5px; letter-spacing:.08em; color:#4a3300; font-weight:600;
+    padding:0 14px; position:relative;
+  }
+  .brandband li + li::before{
+    content:""; position:absolute; left:0; top:50%; transform:translateY(-50%);
+    width:1px; height:12px; background:rgba(74,51,0,.35);
+  }
+
+  /* ═════ 分節 ═════ */
+  main{ padding:0 24px; }
+  section{ padding:32px 0; border-bottom:1px solid var(--rule); }
+  section:last-of-type{ border-bottom:0; }
+  .head{ display:flex; align-items:baseline; gap:11px; margin-bottom:20px; }
+  .head .no{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--brand-deep); }
+  .head h2{ margin:0; font-size:16px; font-weight:700; letter-spacing:.14em; }
+  .head .en{
+    margin-left:auto; font-family:var(--mono); font-size:9.5px;
+    letter-spacing:.22em; color:var(--ink-3); text-transform:uppercase;
+  }
+
+  /* 服務 */
+  .svc{ list-style:none; margin:0; padding:0; }
+  .svc li{
+    display:flex; gap:15px; padding:15px 0; border-top:1px solid var(--rule);
+  }
+  .svc li:first-child{ border-top:0; padding-top:0; }
+  .svc .n{
+    font-family:var(--mono); font-size:11px; color:var(--brand-deep);
+    padding-top:4px; min-width:22px;
+  }
+  .svc b{ display:block; font-size:15px; font-weight:600; letter-spacing:.05em; }
+  .svc span{ display:block; font-size:13px; color:var(--ink-2); line-height:1.85; margin-top:3px; }
+
+  /* 據點 */
+  .sites{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .sites li{
+    background:var(--paper-2); border:1px solid var(--rule); border-radius:3px;
+    padding:11px 13px; font-size:13px; letter-spacing:.04em;
+  }
+  .sites li.hq{ background:var(--brand-soft); border-color:#f3dba6; grid-column:1 / -1; }
+  .sites li .tag{
+    display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.16em;
+    color:var(--brand-deep); text-transform:uppercase; margin-bottom:1px;
+  }
+
+  /* 聯絡 */
+  .rows{ list-style:none; margin:0; padding:0; }
+  .rows li + li{ margin-top:8px; }
+  .rows a, .rows .row{
+    display:flex; align-items:center; gap:14px; padding:13px 15px;
+    text-decoration:none; color:var(--ink);
+    background:var(--paper-2); border:1px solid var(--rule); border-radius:3px;
+    transition:border-color .2s, transform .12s;
+  }
+  .rows a:active{ transform:translateY(1px); border-color:var(--brand); }
+  .rows .ic{
+    width:34px; height:34px; flex:none; border-radius:3px; display:grid; place-items:center;
+    background:var(--brand); color:#fff;
+  }
+  .rows .ic.line{ background:#06c755; }
+  .rows .ic svg{ width:18px; height:18px; }
+  .rows .t{ flex:1; min-width:0; }
+  .rows .t b{
+    display:block; font-family:var(--mono); font-size:9.5px; letter-spacing:.18em;
+    color:var(--ink-3); text-transform:uppercase; font-weight:500;
+  }
+  .rows .t span{ display:block; font-size:14px; letter-spacing:.02em; word-break:break-all; }
+  .rows .arw{ width:14px; height:14px; color:var(--ink-3); flex:none; }
+
+  /* 公司資訊 */
+  .info{ font-size:13px; color:var(--ink-2); }
+  .info dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:9px 16px; }
+  .info dt{
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.16em;
+    color:var(--ink-3); text-transform:uppercase; padding-top:4px;
+  }
+  .info dd{ margin:0; letter-spacing:.03em; }
+  .info a{ color:var(--brand-deep); }
+
+  .colophon{
+    padding:28px 0 32px; text-align:center;
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.26em; color:var(--ink-3);
+  }
+
+  /* ═════ 底部固定列 ═════ */
+  .dock{
+    position:fixed; left:50%; transform:translateX(-50%); bottom:0; z-index:30;
+    width:100%; max-width:520px;
+    padding:11px 20px; padding-bottom:max(11px,env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.92); backdrop-filter:blur(16px);
+    border-top:1px solid var(--rule); display:flex; gap:8px;
+  }
+  .dock a, .dock button{
+    flex:1; appearance:none; font-family:inherit; cursor:pointer; text-decoration:none;
+    border:1px solid var(--rule); background:var(--paper-2); color:var(--ink);
+    border-radius:3px; padding:12px 6px; font-size:12.5px; letter-spacing:.04em;
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    transition:transform .12s;
+  }
+  .dock a:active, .dock button:active{ transform:translateY(1px); }
+  .dock svg{ width:15px; height:15px; }
+  .dock .line{ background:#06c755; color:#fff; border-color:transparent; font-weight:600; }
+  .dock [hidden]{ display:none !important; }
+
+  .toast{
+    position:fixed; left:50%; bottom:86px; transform:translate(-50%,14px);
+    background:var(--ink); color:#fff; font-size:12.5px;
+    padding:10px 18px; border-radius:3px; opacity:0; pointer-events:none;
+    transition:opacity .25s, transform .25s; z-index:40;
+  }
+  .toast.show{ opacity:1; transform:translate(-50%,0); }
+
+  .rise{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
+  .rise.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ .rise{ opacity:1; transform:none; transition:none; } }
+
+  .hero.bare{ height:auto; background:transparent; padding:58px 0 0; }
+  .hero.bare img, .hero.bare .veil, .hero.bare .bar{ display:none; }
+  .hero.bare .meta{ position:static; padding:0 24px; }
+  .hero.bare h1{ color:var(--ink); text-shadow:none; }
+  .hero.bare .en{ color:var(--ink-3); }
+  .hero.bare .corp{ color:var(--ink-2); }
+  .hero.bare .corp span{ color:var(--ink-3); }
+</style>
+</head>
+<body>
+
+<div class="progress"><i id="bar"></i></div>
+
+<div class="shell">
+
+  <header class="hero" id="hero">
+    <img id="photo" src="avatar.jpg" alt="李彥勳">
+    <div class="veil"></div>
+    <div class="bar"></div>
+    <div class="meta">
+      <span class="title">總經理</span>
+      <h1>李彥勳</h1>
+      <p class="en">Rex Lee</p>
+      <p class="corp">
+        悅懌生物科技顧問有限公司
+        <span>香港悅懌生物科技顧問有限公司</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="brandband">
+    <img src="logo.jpg" alt="YUE YI 悅懌生技顧問">
+    <ul>
+      <li>創新配方設計</li>
+      <li>市場需求規劃</li>
+      <li>品牌孵化陪跑</li>
+    </ul>
+  </div>
+
+  <main>
+
+    <section class="rise">
+      <div class="head"><span class="no">01</span><h2>服務項目</h2><span class="en">Services</span></div>
+      <ul class="svc">
+        <li>
+          <span class="n">01</span>
+          <div>
+            <b>創新配方設計</b>
+            <span>從原料評估到配方落地，協助產品在法規與成本之間找到可量產的解法。</span>
+          </div>
+        </li>
+        <li>
+          <span class="n">02</span>
+          <div>
+            <b>市場需求規劃</b>
+            <span>以市場端的真實需求回推產品定位，確認要做什麼、賣給誰、怎麼切入。</span>
+          </div>
+        </li>
+        <li>
+          <span class="n">03</span>
+          <div>
+            <b>品牌孵化 ∙ 陪跑</b>
+            <span>從零到上市的全程陪跑，品牌建立、通路布局到後續調整都一起走。</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="rise">
+      <div class="head"><span class="no">02</span><h2>全球據點</h2><span class="en">Offices</span></div>
+      <ul class="sites">
+        <li class="hq"><span class="tag">Headquarters</span>台灣總部 ∙ 桃園</li>
+        <li><span class="tag">Hong Kong</span>香港</li>
+        <li><span class="tag">USA</span>美國</li>
+        <li><span class="tag">Japan</span>日本辦事處</li>
+        <li><span class="tag">Korea</span>韓國辦事處</li>
+      </ul>
+    </section>
+
+    <section class="rise">
+      <div class="head"><span class="no">03</span><h2>聯絡方式</h2><span class="en">Contact</span></div>
+      <ul class="rows">
+        <li><a href="https://line.me/ti/p/~jesuslovesrex" target="_blank" rel="noopener">
+          <span class="ic line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 4 3.6 7.3 8.4 7.9.3.07.8.2.9.5.1.3.07.7.03 1l-.14.8c-.04.24-.2.94.83.5 1-.4 5.5-3.2 7.5-5.5C20.9 14.7 22 13 22 11c0-4.4-4.5-8-10-8zM8.3 13.4H6.2c-.3 0-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.3h1.6c.3 0 .5.2.5.5s-.2.5-.5.5zm2-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.1c0-.3.2-.5.5-.5s.5.2.5.5v3.8zm4.5 0c0 .2-.14.4-.35.47a.5.5 0 0 1-.56-.18l-1.95-2.65v2.36c0 .3-.22.5-.5.5s-.5-.2-.5-.5V9.1c0-.2.14-.4.35-.47a.5.5 0 0 1 .56.18l1.95 2.65V9.1c0-.3.22-.5.5-.5s.5.2.5.5v3.8zm3.3-2.4c.28 0 .5.22.5.5s-.22.5-.5.5h-1.6v1.1h1.6c.28 0 .5.22.5.5s-.22.5-.5.5h-2.1a.5.5 0 0 1-.5-.5V9.1c0-.28.22-.5.5-.5h2.1c.28 0 .5.22.5.5s-.22.5-.5.5h-1.6v1.1h1.6z"/></svg></span>
+          <span class="t"><b>Line ID</b><span>jesuslovesrex</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+
+        <li><a href="tel:+886926307241">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L15 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.2 2 2 0 0 1 5 3z"/></svg></span>
+          <span class="t"><b>Mobile</b><span>0926-307-241</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+
+        <li><a href="tel:+88633463025,,20">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg></span>
+          <span class="t"><b>Tel</b><span>03-3463025 分機 20</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+
+        <li><a href="mailto:rex@yueyibiotech.com">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="t"><b>Email</b><span>rex@yueyibiotech.com</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+
+        <li><a href="mailto:yueyibiotech@gmail.com">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="t"><b>Email ∙ 台灣</b><span>yueyibiotech@gmail.com</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+
+        <li><a href="https://yue-yi.tw" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18A15 15 0 0 1 12 3"/></svg></span>
+          <span class="t"><b>Website</b><span>yue-yi.tw</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+
+        <li><a href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%E5%B8%82%E6%A1%83%E5%9C%92%E5%8D%80%E5%90%8C%E5%AE%89%E8%A1%97656%E8%99%9F" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <span class="t"><b>Address</b><span>330 桃園市桃園區同安街656號2樓</span></span>
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></a></li>
+      </ul>
+    </section>
+
+    <section class="rise">
+      <div class="head"><span class="no">04</span><h2>公司資訊</h2><span class="en">Company</span></div>
+      <div class="info">
+        <dl>
+          <dt>Company</dt><dd>悅懌生物科技顧問有限公司</dd>
+          <dt>Group</dt><dd>香港悅懌生物科技顧問有限公司</dd>
+          <dt>統一編號</dt><dd>83513104</dd>
+          <dt>Web</dt><dd><a href="https://yue-yi.tw" target="_blank" rel="noopener">yue-yi.tw</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <div class="colophon">YUE YI BIOTECH CONSULTING</div>
+  </main>
+</div>
+
+<div class="dock">
+  <a class="line" href="https://line.me/ti/p/~jesuslovesrex" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 4 3.6 7.3 8.4 7.9.3.07.8.2.9.5.1.3.07.7.03 1l-.14.8c-.04.24-.2.94.83.5 1-.4 5.5-3.2 7.5-5.5C20.9 14.7 22 13 22 11c0-4.4-4.5-8-10-8z"/></svg>
+    加 LINE
+  </a>
+  <button id="btnShare" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M12 16V3M7 8l5-5 5 5"/></svg>
+    分享名片
+  </button>
+  <button id="btnVcard">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5"/></svg>
+    存聯絡人
+  </button>
+  <button id="btnCopy">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M15 5H5a2 2 0 0 0-2 2v10"/></svg>
+    複製連結
+  </button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PROFILE = {
+  name:"李彥勳", nameEn:"Rex Lee",
+  title:"總經理", org:"悅懌生物科技顧問有限公司",
+  tagline:"創新配方設計 ∙ 市場需求規劃 ∙ 品牌孵化陪跑",
+  mobile:"+886926307241",
+  tel:"+88633463025",
+  email:"rex@yueyibiotech.com",
+  email2:"yueyibiotech@gmail.com",
+  website:"https://yue-yi.tw",
+  lineId:"jesuslovesrex",
+  address:"330 桃園市桃園區同安街656號2樓",
+};
+
+// 之後若要加「分享名片給好友」，把 LIFF ID 填進來即可
+const LIFF_ID = "";
+const CARD_IMAGE_URL = location.protocol === "https:"
+  ? new URL("card-flex.jpg", location.href).href : "";
+
+const photo = document.getElementById("photo");
+photo.addEventListener("error", () => document.getElementById("hero").classList.add("bare"));
+
+const bar = document.getElementById("bar");
+addEventListener("scroll", () => {
+  const h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
+}, { passive:true });
+
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold:.12 });
+document.querySelectorAll(".rise").forEach(el => io.observe(el));
+
+let tt;
+function toast(m){
+  const t = document.getElementById("toast");
+  t.textContent = m; t.classList.add("show");
+  clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2200);
+}
+const siteUrl = () => location.origin + location.pathname;
+
+document.getElementById("btnCopy").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(siteUrl()); toast("連結已複製"); }
+  catch { toast("請長按網址列複製"); }
+});
+
+document.getElementById("btnVcard").addEventListener("click", () => {
+  const L = ["BEGIN:VCARD","VERSION:3.0",
+    "N:" + PROFILE.name + ";;;;", "FN:" + PROFILE.name,
+    "ORG:" + PROFILE.org, "TITLE:" + PROFILE.title,
+    "TEL;TYPE=CELL:" + PROFILE.mobile,
+    "TEL;TYPE=WORK:" + PROFILE.tel,
+    "EMAIL;TYPE=INTERNET:" + PROFILE.email,
+    "EMAIL;TYPE=INTERNET:" + PROFILE.email2,
+    "URL:" + PROFILE.website,
+    "ADR;TYPE=WORK:;;" + PROFILE.address + ";;;;",
+    "NOTE:" + PROFILE.tagline + "　LINE ID: " + PROFILE.lineId,
+    "END:VCARD"].join("\r\n");
+  const b = new Blob(["﻿" + L], { type:"text/vcard;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(b);
+  a.download = "Rex-Lee.vcf";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  toast("已下載聯絡人檔");
+});
+
+function shareMessage(){
+  const url = siteUrl();
+  if (CARD_IMAGE_URL) {
+    return { type:"flex", altText:PROFILE.name + " 的電子名片", contents:{
+      type:"bubble", size:"mega",
+      hero:{ type:"image", url:CARD_IMAGE_URL, size:"full", aspectRatio:"2:3", aspectMode:"cover",
+             action:{ type:"uri", label:"打開名片", uri:url } }
+    }};
+  }
+  return { type:"flex", altText:PROFILE.name + " 的電子名片", contents:{
+    type:"bubble",
+    body:{ type:"box", layout:"vertical", paddingAll:"18px", contents:[
+      { type:"text", text:PROFILE.name, weight:"bold", size:"xl", color:"#1b1a18" },
+      { type:"text", text:PROFILE.title + " ∙ " + PROFILE.org, size:"sm", color:"#8d8a84", wrap:true, margin:"xs" }
+    ]},
+    footer:{ type:"box", layout:"vertical", paddingAll:"12px", contents:[
+      { type:"button", style:"primary", height:"sm", color:"#ffad01",
+        action:{ type:"uri", label:"打開電子名片", uri:url } }
+    ]}
+  }};
+}
+
+(async () => {
+  if (!LIFF_ID || typeof liff === "undefined") return;
+  try {
+    await liff.init({ liffId: LIFF_ID });
+    if (!liff.isApiAvailable("shareTargetPicker")) return;
+    const b = document.getElementById("btnShare");
+    b.hidden = false;
+    b.addEventListener("click", async () => {
+      try { const r = await liff.shareTargetPicker([shareMessage()]); toast(r ? "名片已送出" : "已取消"); }
+      catch (e) { toast("分享失敗"); console.error(e); }
+    });
+  } catch (e) { console.error("LIFF init failed:", e); }
+})();
+</script>
+</body>
+</html>
